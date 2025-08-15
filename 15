@@ -19,8 +19,8 @@ local Window = Rayfield:CreateWindow({
    local Tab3 = Window:CreateTab("标签页3")
 
    Tab1:CreateButton({
-       Name = "点击我",
+       Name = "1",
        Callback = function()
-           Rayfield:Notify({Title = "提示", Content = "你点击了按钮！"})
+           Rayfield:Notify({Title = "提示", Content = "2"})
        end,
    })
