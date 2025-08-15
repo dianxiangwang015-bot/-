@@ -1,0 +1,21 @@
+a = gg.prompt({'请输入密码'}, nil, {'text'})
+if a == nil then os.exit() end
+if a[1] == '123' then
+    gg.alert("密码正确")
+else
+    gg.alert("密码错误")
+    os.exit()
+end
+
+local Window = Rayfield:CreateWindow({
+    Name = "UI 示例窗口",
+    LoadingTitle = "加载中...",
+    LoadingSubtitle = "UI 元素示例",
+    ConfigurationSaving = {
+        Enabled = false,
+    },
+})
+
+local Tab1 = Window:CreateTab("标签页1")
+local Tab2 = Window:CreateTab("标签页2")
+local Tab3 = Window:CreateTab("标签页3")
