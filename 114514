@@ -1,38 +1,31 @@
--- 获取玩家对象
+
 local player = game.Players.LocalPlayer
 
--- 创建主界面（初始为隐藏）
 local MainGui = Instance.new("ScreenGui")
 MainGui.Name = "MainGui"
 MainGui.Parent = player:WaitForChild("PlayerGui")
-MainGui.Enabled = false  -- 初始隐藏
+MainGui.Enabled = false
 
--- 主窗口框架
 local Frame = Instance.new("Frame")
-Frame.Name = "MainFrame"
 Frame.Parent = MainGui
 Frame.Size = UDim2.new(0, 250, 0, 150)
-Frame.Position = UDim2.new(0.3, 0, 0.3, 0)  -- 使用整数偏移量
+Frame.Position = UDim2.new(0.3, 0, 0.3, 0)
 Frame.BackgroundColor3 = Color3.new(0.6, 0.6, 0.6)
-Frame.BorderSizePixel = 2
 
--- 美化圆角
 local UICorner = Instance.new("UICorner")
 UICorner.Parent = Frame
 UICorner.CornerRadius = UDim.new(0, 12)
 
--- 标题
 local Title = Instance.new("TextLabel")
 Title.Parent = Frame
 Title.Size = UDim2.new(1, 0, 0, 40)
-Title.Position = UDim2.new(0, 0, 0, 0)  -- 标题顶端对齐
+Title.Position = UDim2.new(0, 0, 0, 0)
 Title.Text = "我的脚本界面"
 Title.Font = Enum.Font.GothamBold
 Title.TextSize = 20
 Title.BackgroundTransparency = 1
 Title.TextColor3 = Color3.new(1, 1, 1)
 
--- 按钮
 local Button = Instance.new("TextButton")
 Button.Parent = Frame
 Button.Size = UDim2.new(0.7, 0, 0, 40)
@@ -42,17 +35,14 @@ Button.Font = Enum.Font.Gotham
 Button.TextSize = 18
 Button.BackgroundColor3 = Color3.new(0.3, 0.7, 0.3)
 Button.TextColor3 = Color3.new(1, 1, 1)
-Button.BorderSizePixel = 1
 
 local BtnCorner = Instance.new("UICorner")
 BtnCorner.Parent = Button
 
--- 按钮点击事件
 Button.MouseButton1Click:Connect(function()
     Title.Text = "开启成功！"
 end)
 
--- 创建主界面开关按钮（比如放在玩家屏幕角落）
 local OpenBtn = Instance.new("TextButton")
 OpenBtn.Parent = player:WaitForChild("PlayerGui")
 OpenBtn.Size = UDim2.new(0, 100, 0, 40)
@@ -62,7 +52,6 @@ OpenBtn.Font = Enum.Font.GothamBold
 OpenBtn.TextSize = 18
 OpenBtn.BackgroundColor3 = Color3.new(0.1,0.5,0.8)
 OpenBtn.TextColor3 = Color3.new(1,1,1)
-OpenBtn.BorderSizePixel = 0
 
 OpenBtn.MouseButton1Click:Connect(function()
     MainGui.Enabled = true
