@@ -1,0 +1,41 @@
+-- 创建主界面
+local MainGui = Instance.new("ScreenGui")
+MainGui.Name = "MainGui"
+MainGui.Parent = game.CoreGui
+
+-- 创建一个窗口框架
+local Frame = Instance.new("Frame")
+Frame.Name = "MainFrame"
+Frame.Parent = MainGui
+Frame.Size = UDim2.new(0, 250, 0, 150)
+Frame.Position = UDim2.new(0.4, 0, 0.3, 0)
+Frame.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+Frame.BorderSizePixel = 2
+
+-- 114514
+local Title = Instance.new("TextLabel")
+Title.Parent = Frame
+Title.Size = UDim2.new(1, 0, 0, 40)
+Title.Position = UDim2.new(0, 0, 0, 0)
+Title.Text = "我的脚本界面"
+Title.Font = Enum.Font.GothamBold
+Title.TextSize = 20
+Title.BackgroundTransparency = 1
+Title.TextColor3 = Color3.new(1, 1, 1)
+
+-- 创建按钮
+local Button = Instance.new("TextButton")
+Button.Parent = Frame
+Button.Size = UDim2.new(0.7, 0, 0, 40)
+Button.Position = UDim2.new(0.15, 0, 0.6, 0)
+Button.Text = "111"
+Button.Font = Enum.Font.Gotham
+Button.TextSize = 18
+Button.BackgroundColor3 = Color3.new(0.3, 0.7, 0.3)
+Button.TextColor3 = Color3.new(1, 1, 1)
+Button.BorderSizePixel = 1
+
+-- 按钮点击事件
+Button.MouseButton1Click:Connect(function()
+    Title.Text = "开启成功！"
+end)
