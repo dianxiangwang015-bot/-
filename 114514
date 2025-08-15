@@ -1,11 +1,10 @@
-local LBLG = Instance.new("ScreenGui", getParent)
-local LBL = Instance.new("TextLabel", getParent)
+-- 获取玩家对象
 local player = game.Players.LocalPlayer
 
 -- 创建主界面（初始为隐藏）
 local MainGui = Instance.new("ScreenGui")
 MainGui.Name = "MainGui"
-MainGui.Parent = game.CoreGui
+MainGui.Parent = player:WaitForChild("PlayerGui")
 MainGui.Enabled = false  -- 初始隐藏
 
 -- 主窗口框架
@@ -13,7 +12,7 @@ local Frame = Instance.new("Frame")
 Frame.Name = "MainFrame"
 Frame.Parent = MainGui
 Frame.Size = UDim2.new(0, 250, 0, 150)
-Frame.Position = UDim2.new(0.3, 0, 0.3, 0)  -- 修正为整数
+Frame.Position = UDim2.new(0.3, 0, 0.3, 0)  -- 使用整数偏移量
 Frame.BackgroundColor3 = Color3.new(0.6, 0.6, 0.6)
 Frame.BorderSizePixel = 2
 
@@ -26,7 +25,7 @@ UICorner.CornerRadius = UDim.new(0, 12)
 local Title = Instance.new("TextLabel")
 Title.Parent = Frame
 Title.Size = UDim2.new(1, 0, 0, 40)
-Title.Position = UDim2.new(0.3, 0, 0.3, 0)  -- 修正为整数
+Title.Position = UDim2.new(0, 0, 0, 0)  -- 标题顶端对齐
 Title.Text = "我的脚本界面"
 Title.Font = Enum.Font.GothamBold
 Title.TextSize = 20
@@ -55,7 +54,7 @@ end)
 
 -- 创建主界面开关按钮（比如放在玩家屏幕角落）
 local OpenBtn = Instance.new("TextButton")
-OpenBtn.Parent = game.CoreGui
+OpenBtn.Parent = player:WaitForChild("PlayerGui")
 OpenBtn.Size = UDim2.new(0, 100, 0, 40)
 OpenBtn.Position = UDim2.new(0, 10, 0, 10)
 OpenBtn.Text = "打开主界面"
