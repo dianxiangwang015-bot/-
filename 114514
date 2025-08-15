@@ -1,3 +1,7 @@
+local LBLG = Instance.new("ScreenGui", getParent)
+local LBL = Instance.new("TextLabel", getParent)
+local player = game.Players.LocalPlayer
+
 -- 创建主界面（初始为隐藏）
 local MainGui = Instance.new("ScreenGui")
 MainGui.Name = "MainGui"
