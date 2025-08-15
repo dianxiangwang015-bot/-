@@ -9,7 +9,7 @@ local Frame = Instance.new("Frame")
 Frame.Name = "MainFrame"
 Frame.Parent = MainGui
 Frame.Size = UDim2.new(0, 250, 0, 150)
-Frame.Position = UDim2.new(0.3, 0.6, 0.3, 0.6)
+Frame.Position = UDim2.new(0.3, 0, 0.3, 0)  -- 修正为整数
 Frame.BackgroundColor3 = Color3.new(0.6, 0.6, 0.6)
 Frame.BorderSizePixel = 2
 
@@ -22,7 +22,7 @@ UICorner.CornerRadius = UDim.new(0, 12)
 local Title = Instance.new("TextLabel")
 Title.Parent = Frame
 Title.Size = UDim2.new(1, 0, 0, 40)
-Title.Position = UDim2.new(0.3, 0.6, 0.3, 0.6)
+Title.Position = UDim2.new(0.3, 0, 0.3, 0)  -- 修正为整数
 Title.Text = "我的脚本界面"
 Title.Font = Enum.Font.GothamBold
 Title.TextSize = 20
