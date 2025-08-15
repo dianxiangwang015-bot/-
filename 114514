@@ -3,7 +3,7 @@ local MainGui = Instance.new("ScreenGui")
 MainGui.Name = "MainGui"
 MainGui.Parent = game.CoreGui
 
--- 创建一个窗口框架
+-- 主窗口框架
 local Frame = Instance.new("Frame")
 Frame.Name = "MainFrame"
 Frame.Parent = MainGui
@@ -12,7 +12,12 @@ Frame.Position = UDim2.new(0.4, 0, 0.3, 0)
 Frame.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
 Frame.BorderSizePixel = 2
 
--- 114514
+-- 美化圆角
+local UICorner = Instance.new("UICorner")
+UICorner.Parent = Frame
+UICorner.CornerRadius = UDim.new(0, 12)
+
+-- 标题
 local Title = Instance.new("TextLabel")
 Title.Parent = Frame
 Title.Size = UDim2.new(1, 0, 0, 40)
@@ -23,17 +28,20 @@ Title.TextSize = 20
 Title.BackgroundTransparency = 1
 Title.TextColor3 = Color3.new(1, 1, 1)
 
--- 创建按钮
+-- 按钮
 local Button = Instance.new("TextButton")
 Button.Parent = Frame
 Button.Size = UDim2.new(0.7, 0, 0, 40)
 Button.Position = UDim2.new(0.15, 0, 0.6, 0)
-Button.Text = "111"
+Button.Text = "点击开启"
 Button.Font = Enum.Font.Gotham
 Button.TextSize = 18
 Button.BackgroundColor3 = Color3.new(0.3, 0.7, 0.3)
 Button.TextColor3 = Color3.new(1, 1, 1)
 Button.BorderSizePixel = 1
+
+local BtnCorner = Instance.new("UICorner")
+BtnCorner.Parent = Button
 
 -- 按钮点击事件
 Button.MouseButton1Click:Connect(function()
