@@ -1,4 +1,9 @@
-local Rayfield = loadstring(game:HttpGet("https://github.com/dianxiangwang015-bot/-/blob/main/15"))()
+local Rayfield = loadstring(game:HttpGet("https://raw.githubusercontent.com/dianxiangwang015-bot/-/main/15.lua"))()
+
+	Name = "通用",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
 
 local Window = Rayfield:CreateWindow({
        Name = "UI 示例窗口",
@@ -19,8 +24,3 @@ local Window = Rayfield:CreateWindow({
            Rayfield:Notify({Title = "提示", Content = "你点击了按钮！"})
        end,
    })
-local window = Tab:MakeTab({
-	Name = "通用",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
