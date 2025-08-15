@@ -1,7 +1,8 @@
--- 创建主界面
+-- 创建主界面（初始为隐藏）
 local MainGui = Instance.new("ScreenGui")
 MainGui.Name = "MainGui"
 MainGui.Parent = game.CoreGui
+MainGui.Enabled = false  -- 初始隐藏
 
 -- 主窗口框架
 local Frame = Instance.new("Frame")
@@ -46,4 +47,20 @@ BtnCorner.Parent = Button
 -- 按钮点击事件
 Button.MouseButton1Click:Connect(function()
     Title.Text = "开启成功！"
+end)
+
+-- 创建主界面开关按钮（比如放在玩家屏幕角落）
+local OpenBtn = Instance.new("TextButton")
+OpenBtn.Parent = game.CoreGui
+OpenBtn.Size = UDim2.new(0, 100, 0, 40)
+OpenBtn.Position = UDim2.new(0, 10, 0, 10)
+OpenBtn.Text = "打开主界面"
+OpenBtn.Font = Enum.Font.GothamBold
+OpenBtn.TextSize = 18
+OpenBtn.BackgroundColor3 = Color3.new(0.1,0.5,0.8)
+OpenBtn.TextColor3 = Color3.new(1,1,1)
+OpenBtn.BorderSizePixel = 0
+
+OpenBtn.MouseButton1Click:Connect(function()
+    MainGui.Enabled = true
 end)
