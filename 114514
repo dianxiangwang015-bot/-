@@ -1,3 +1,6 @@
+local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Orion/main/source"))()
+
+-- GUI创建
 local LBLG = Instance.new("ScreenGui")
 LBLG.Name = "LBLG"
 LBLG.Parent = game.CoreGui
@@ -21,12 +24,11 @@ LBL.TextWrapped = true
 LBL.Visible = true
 
 -- FPS与时间刷新
-local FpsLabel = LBL
 local Heartbeat = game:GetService("RunService").Heartbeat
 local Start = tick()
 local FrameUpdateTable = {}
 
-local function HeartbeatUpdate()
+Heartbeat:Connect(function()
     local LastIteration = tick()
     for Index = #FrameUpdateTable, 1, -1 do
         FrameUpdateTable[Index + 1] = (FrameUpdateTable[Index] >= LastIteration - 1) and FrameUpdateTable[Index] or nil
@@ -34,9 +36,8 @@ local function HeartbeatUpdate()
     FrameUpdateTable[1] = LastIteration
     local CurrentFPS = (tick() - Start >= 1 and #FrameUpdateTable) or (#FrameUpdateTable / (tick() - Start))
     CurrentFPS = CurrentFPS - CurrentFPS % 1
-    FpsLabel.Text = ("标准时间:" .. os.date("%H") .. "时" .. os.date("%M") .. "分" .. os.date("%S"))
-end
-Heartbeat:Connect(HeartbeatUpdate)
+    LBL.Text = ("标准时间:" .. os.date("%H") .. "时" .. os.date("%M") .. "分" .. os.date("%S"))
+end)
 
 -- 反挂机
 OrionLib:MakeNotification({
@@ -233,6 +234,6 @@ CommonTab:AddToggle({
 CommonTab:AddButton({
     Name = "名",
     Callback = function()
-        -- 自定义功能，可自行补充
+        -- 可自定义功能
     end
 })
