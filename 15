@@ -23,4 +23,4 @@ local Window = Rayfield:CreateWindow({
        Callback = function()
            Rayfield:Notify({Title = "提示", Content = "你点击了按钮！"})
        end,
-  })
+   })
