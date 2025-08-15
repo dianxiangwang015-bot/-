@@ -9,7 +9,7 @@ local Frame = Instance.new("Frame")
 Frame.Name = "MainFrame"
 Frame.Parent = MainGui
 Frame.Size = UDim2.new(0, 250, 0, 150)
-Frame.Position = UDim2.new(0.6, 6, 0.6, 0.6)
+Frame.Position = UDim2.new(0.3, 0.6, 0.3, 0.6)
 Frame.BackgroundColor3 = Color3.new(0.6, 0.6, 0.6)
 Frame.BorderSizePixel = 2
 
