@@ -1,5 +1,11 @@
 local Rayfield = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Rayfield/main/source.lua"))()
-   local Window = Rayfield:CreateWindow({
+local Tab = Window:MakeTab({
+	Name = "通用",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Window = Rayfield:CreateWindow({
        Name = "UI 示例窗口",
        LoadingTitle = "加载中...",
        LoadingSubtitle = "UI 元素示例",
